@@ -1,0 +1,25 @@
+package com.example.myapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.a1);
+
+        Ev1 = (EditText)findViewById(R.id.editText1);
+        public void abc(View view){
+            String strTmp = "点击";
+            Ev1.setText(strTmp);
+
+        }
+    }
+
+}

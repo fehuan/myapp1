@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="btn_ok">ok</string>
+    <string name="btn_end">end</string>
+    <string name="btn_start">start</string>
+    <string name="btn_usename">usename</string>
+    <string name="btn_password">password</string>
+</resources>
+
