@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity{
     EditText ET1;
     EditText ET2;
     EditText ET3;
