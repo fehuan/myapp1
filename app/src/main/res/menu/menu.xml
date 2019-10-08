@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:icon="@mipmap/settings"
+    android:showAsAction="ifRoom"
+    <item
+        android:id="@+id/Drate"
+        android:title="当前美元汇率"
+        android:icon="@mipmap/dollar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/Erate"
+        android:title="当前欧元汇率"
+        android:icon="@mipmap/euro"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/Wrate"
+        android:title="当前南韩元汇率"
+        android:icon="@mipmap/won"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -5,5 +5,10 @@
     <string name="btn_start">start</string>
     <string name="btn_usename">usename</string>
     <string name="btn_password">password</string>
+    <string name="btn_score">score</string>
+    <string name="btn_point1">+1 points</string>
+    <string name="btn_point2">+2 points</string>
+    <string name="btn_point3">+3 points</string>
+    <string name="btn_reset">reset</string>
 </resources>
 

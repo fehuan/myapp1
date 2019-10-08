@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".huilv">
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="input RMB"
+        android:inputType="number|textPersonName|text"
+        android:textColor="#7F6868"
+        android:textColorHint="#8B7373"
+        android:textDirection="firstStrongRtl"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:gravity="center"
+        android:text="Hello"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btn_Dollar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dollar"
+        android:textSize="18sp"
+        android:onClick="btn_dollar"/>
+
+    <Button
+        android:id="@+id/btn_Euro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Euro"
+        android:textSize="18sp"
+        android:onClick="btn_euro"/>
+
+    <Button
+        android:id="@+id/btn_Won"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Won"
+        android:textSize="18sp"
+        android:onClick="btn_won"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIG"
+        android:textSize="18sp"
+        android:onClick="btn_config"/>
+
+</LinearLayout>
