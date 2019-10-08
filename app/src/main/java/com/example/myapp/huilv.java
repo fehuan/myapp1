@@ -86,10 +86,10 @@ public class huilv extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == 2) {
-            Bundle bundle = data.getExtras();
-            dollarRate = bundle.getFloat("key_dollar", 0.0f);
-            euroRate = bundle.getFloat("key_dollar", 0.0f);
-            wonRate = bundle.getFloat("key_dollar", 0.0f);
+            Bundle bdl = data.getExtras();
+            dollarRate = bdl.getFloat("key_dollar", 0.0f);
+            euroRate = bdl.getFloat("key_euro", 0.0f);
+            wonRate = bdl.getFloat("key_won", 0.0f);
             //下面日志信息
             Log.i(TAG, "onActivityResult: dollarRate=" + dollarRate);
             Log.i(TAG, "onActivityResult: euroRate=" + euroRate);
