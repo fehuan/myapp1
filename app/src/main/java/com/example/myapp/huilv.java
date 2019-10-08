@@ -2,8 +2,8 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +28,12 @@ public class huilv extends AppCompatActivity {
 
        input = (EditText)findViewById(R.id.input);//读取xml中input对象
        output = (TextView)findViewById(R.id.output);
+
+        //从rate.xml取数据
+        SharedPreferences share=getSharedPreferences("rate",MODE_PRIVATE);
+        dollarRate=share.getFloat("key_dollar",dollarRate);
+        euroRate=share.getFloat("key_euro",euroRate);
+        wonRate=share.getFloat("key_won",wonRate);
     }
 
     public void btn_config(View btn) {
@@ -99,7 +105,6 @@ public class huilv extends AppCompatActivity {
 
     }
 
-
     //读取菜单
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);//紫色部分为menu.xml名称
@@ -110,23 +115,23 @@ public class huilv extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.Drate){
             // 事件处理代码
-            String dollarRate2 = String.valueOf(dollarRate);
-            Toast.makeText(this, "美元汇率为："+ dollarRate2,
-                    Toast.LENGTH_LONG).show();
+            String d = String.valueOf(dollarRate);
+            Toast.makeText(this, "美元汇率为："+ d,
+                    Toast.LENGTH_SHORT).show();
         }
 
         if(item.getItemId()==R.id.Erate){
             // 事件处理代码
-            String euroRate2 = String.valueOf(euroRate);
-            Toast.makeText(this, "欧元汇率为："+ euroRate2,
-                    Toast.LENGTH_LONG).show();
+            String e = String.valueOf(euroRate);
+            Toast.makeText(this, "欧元汇率为："+ e,
+                    Toast.LENGTH_SHORT).show();
         }
 
         if(item.getItemId()==R.id.Wrate){
             // 事件处理代码
-            String wonRate2 = String.valueOf(wonRate);
-            Toast.makeText(this, "南韩元汇率为："+ wonRate2,
-                    Toast.LENGTH_LONG).show();
+            String w = String.valueOf(wonRate);
+            Toast.makeText(this, "南韩元汇率为："+ w,
+                    Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

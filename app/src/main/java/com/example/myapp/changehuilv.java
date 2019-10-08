@@ -18,12 +18,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+
 
 public class changehuilv extends AppCompatActivity implements Runnable{
     private final String TAG = "main";
@@ -42,18 +37,11 @@ public class changehuilv extends AppCompatActivity implements Runnable{
         EuroRate2 = (EditText)findViewById(R.id.EuroRate);
         WonRate2 = (EditText)findViewById(R.id.WonRate);
 
-        /*从rate.xml取数据
-        SharedPreferences share=getSharedPreferences("a",MODE_PRIVATE);
-        float dollarRate3=share.getFloat("DollarRate",0.0f);
-        float euroRate3=share.getFloat("EuroRate",0.0f);
-        float wonrRate3=share.getFloat("WonRate",0.0f);
-        */
-
         //从huilv.java取数据
-        Bundle bundle = getIntent().getExtras();
-         dollarRate = bundle.getFloat("key_dollar",0.1f);
-         euroRate = bundle.getFloat("key_euro",0.1f);
-         wonRate = bundle.getFloat("key_won",0.1f);
+        Bundle bdl = getIntent().getExtras();
+         dollarRate = bdl.getFloat("key_dollar",0.1f);
+         euroRate = bdl.getFloat("key_euro",0.1f);
+         wonRate = bdl.getFloat("key_won",0.1f);
 
         //设置默认汇率显示
         String dollarRate2 = String.valueOf(dollarRate);
@@ -88,15 +76,13 @@ public class changehuilv extends AppCompatActivity implements Runnable{
 
         finish();//返回到调用页面
 
-        /*存储数据到rate.xml
-        SharedPreferences share=getSharedPreferences("rate",MODE_PRIVATE);
-        SharedPreferences.Editor editor=share.edit();
-        editor.putFloat("DollarRate",newDollar);
-        editor.putFloat("EuroRate",newEuro);
-        editor.putFloat("WonRate",newWon);
+        //存储数据到rate.xml
+        SharedPreferences sp=getSharedPreferences("rate",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        editor.putFloat("key_dollar",newDollar);
+        editor.putFloat("key_euro",newEuro);
+        editor.putFloat("key_won",newWon);
         editor.commit();
-*/
-
     }
 
     public void commit(View btn) {
@@ -131,44 +117,10 @@ public class changehuilv extends AppCompatActivity implements Runnable{
                 }else if("韩元".equals(str1)){
                     WonRate2.setText(vS);
                 }
-
-
             }
         } catch (IOException e) {
             e.printStackTrace();
           }
     }
-
-
-
-
-  /*  另一种获取网络数据方法
-  private String inputStream2String(InputStream inputStream)
-            throws IOException { final int bufferSize = 1024;
-        final char[] buffer = new char[bufferSize];
-        final StringBuilder out = new StringBuilder();
-        Reader in = new InputStreamReader(inputStream, "gb2312");
-        while (true) {
-            int rsz = in.read(buffer, 0, buffer.length);
-            if (rsz < 0)
-                break;
-            out.append(buffer, 0, rsz);
-        }
-        return out.toString();
-    }
-
-   private Handler handler = new  Handler() {
-        @Override
-        public void handleMessage(Message msg){
-            if(msg.what==5){
-                String str = (String) msg.obj;
-                Log.i(TAG, "handleMessage: getMessage msg = " + str);
-                EditText DollarRate= findViewById(R.id.DollarRate);//读取xml中对象
-                DollarRate.setText(str);
-            }
-            super.handleMessage(msg);
-        }
-    };
-    */
 }
 
