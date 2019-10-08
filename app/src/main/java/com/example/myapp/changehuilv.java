@@ -121,25 +121,17 @@ public class changehuilv extends AppCompatActivity implements Runnable{
                 String str1 = td1.text();
                 String val = td2.text();
                 Log.i(TAG, "run: " + str1 + "==>" + val);
-                // 获取数据并放入bundle中
-                float v = 100f / Float.parseFloat(val);
-                Bundle bdl = new Bundle();
-                if("美元".equals(str1)){
-                    bdl.putFloat("DollarRate", v);
-                }else if("欧元".equals(str1)){
-                    bdl.putFloat("EuroRate", v);
-                }else if("韩元".equals(str1)){
-                    bdl.putFloat("WonRate", v);
-                }
-                // 汇率数据放入Bundle带回
-                Intent intent = getIntent();
-                Message msg = handler.obtainMessage(5);
-                msg.obj = bdl;
-                handler.sendMessage(msg);
-                intent.putExtras(bdl);//传递参数
-                setResult(2,intent);//设置resultCode及带回的数据
 
-                finish();//返回到调用页面
+                float vF = 100f / Float.parseFloat(val);
+                String vS =String.valueOf(vF);
+                if("美元".equals(str1)){
+                    DollarRate2.setText(vS);
+                }else if("欧元".equals(str1)){
+                    EuroRate2.setText(vS);
+                }else if("韩元".equals(str1)){
+                    WonRate2.setText(vS);
+                }
+
 
             }
         } catch (IOException e) {
@@ -148,23 +140,7 @@ public class changehuilv extends AppCompatActivity implements Runnable{
     }
 
 
-    private Handler handler = new  Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            if(msg.what==5){
-                Bundle bdl = (Bundle) msg.obj;
-                dollarRate = bdl.getFloat("DollarRate");
-                euroRate = bdl.getFloat("EuroRate");
-                wonRate = bdl.getFloat("WonRate");
 
-                Log.i(TAG, "handleMessage: dollarRate:" + dollarRate);
-                Log.i(TAG, "handleMessage: euroRate:" + euroRate);
-                Log.i(TAG, "handleMessage: wonRate:" + wonRate);
-                Toast.makeText(changehuilv.this , "汇率已更新", Toast.LENGTH_SHORT).show();
-            }
-            super.handleMessage(msg);
-        }
-    };
 
   /*  另一种获取网络数据方法
   private String inputStream2String(InputStream inputStream)
