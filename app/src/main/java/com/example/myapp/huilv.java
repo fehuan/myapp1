@@ -90,6 +90,11 @@ public class huilv extends AppCompatActivity {
         btn("won");
     }
 
+    public void btn_rateList(View btn) {
+        Intent intent = new Intent(this , list.class); //activity.class就是要指定启动的窗口
+        startActivity(intent);
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == 2) {
             Bundle bdl = data.getExtras();

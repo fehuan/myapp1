@@ -54,11 +54,19 @@
         android:onClick="btn_won"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_Config"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CONFIG"
+        android:text="Config"
         android:textSize="18sp"
         android:onClick="btn_config"/>
+
+    <Button
+        android:id="@+id/btn_RateList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="RateList"
+        android:onClick="btn_rateList"/>
 
 </LinearLayout>
