@@ -21,7 +21,6 @@ import static java.lang.Thread.sleep;
 
 public class list extends ListActivity implements Runnable{
     private  static  String TAG ="Main";
-    List<String> list1 = new ArrayList<String>();
     Elements tds;
     String i;
     @Override
@@ -31,6 +30,8 @@ public class list extends ListActivity implements Runnable{
 
         Thread t = new Thread(this);
         t.start();
+
+        //在子进程没有完成时间空等待
         while (i == null) {
             try {
                 sleep(100);
@@ -38,6 +39,7 @@ public class list extends ListActivity implements Runnable{
                 e.printStackTrace();
             }
         }
+
         List<String> list1 = new ArrayList<String>();
         for (int i = 0; i < tds.size(); i += 6) {
             Element td1 = tds.get(i);
@@ -61,7 +63,7 @@ public class list extends ListActivity implements Runnable{
             Element table6 = tables.get(0);
             // 获取 TD 中的数据
              tds = table6.getElementsByTag("td");
-            i ="123";
+            i ="123";//子进程完成标志
         } catch (IOException e) {
             e.printStackTrace();
         }
