@@ -11,9 +11,9 @@
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".changehuilv" />
-        <activity android:name=".list"/>
-        <activity android:name=".huilv">
+        <activity android:name=".ChangeHuilv" />
+        <activity android:name=".MyList"/>
+        <activity android:name=".Huilv">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -13,7 +13,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
-public class huilv extends AppCompatActivity {
+public class Huilv extends AppCompatActivity {
     private  static  String TAG ="Main";
     float dollarRate = 0.1406f;
     float euroRate = 0.1276f;
@@ -37,7 +37,7 @@ public class huilv extends AppCompatActivity {
     }
 
     public void btn_config(View btn) {
-        Intent intent = new Intent(this, changehuilv.class);
+        Intent intent = new Intent(this, ChangeHuilv.class);
         //将参数打包成一个bundle
         Bundle bdl = new Bundle();
         bdl.putFloat("key_dollar", dollarRate);
@@ -91,9 +91,11 @@ public class huilv extends AppCompatActivity {
     }
 
     public void btn_rateList(View btn) {
-        Intent intent = new Intent(this , list.class); //activity.class就是要指定启动的窗口
+        Intent intent = new Intent(this , MyList.class); //activity.class就是要指定启动的窗口
         startActivity(intent);
     }
+
+
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == 2) {

@@ -20,7 +20,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 
-public class changehuilv extends AppCompatActivity implements Runnable{
+public class ChangeHuilv extends AppCompatActivity implements Runnable{
     private final String TAG = "main";
     float dollarRate = 0.1406f;
     float euroRate = 0.1276f;
