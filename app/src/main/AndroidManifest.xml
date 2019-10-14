@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ChangeHuilv" />
+        <activity android:name=".JiSuan" />
         <activity android:name=".MyList"/>
         <activity android:name=".Huilv">
             <intent-filter>

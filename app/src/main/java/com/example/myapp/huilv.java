@@ -95,8 +95,6 @@ public class Huilv extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == 2) {
             Bundle bdl = data.getExtras();

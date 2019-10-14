@@ -8,14 +8,15 @@
         android:id="@+id/itemTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textColor="@color/colorPrimary"
+        android:text="货币名称"
         android:textSize="20sp" />
-    <TextView android:id="@+id/itemDetail"
+
+    <TextView
+        android:id="@+id/itemDetail"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
-        android:text="@string/app_name"
+        android:text="钞卖价"
         android:textColor="@android:color/holo_red_light"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 </LinearLayout>

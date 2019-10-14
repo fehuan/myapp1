@@ -3,4 +3,35 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/Jname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="name"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/Jinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="input RMB"
+        android:inputType="number|textPersonName"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_O"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="转换"
+        android:textSize="24sp"
+        android:onClick="btn_o"/>
+
+    <TextView
+        android:id="@+id/Joutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="24sp" />
 </LinearLayout>
